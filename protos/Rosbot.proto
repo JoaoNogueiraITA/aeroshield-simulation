@@ -1,0 +1,33 @@
+#BRSL
+# Documentation URL: https://webots.cloud
+# Keywords: robot/wheeled
+# An autonomous robot platform designed for indoor applications, featuring 4x4 drive, LiDAR, and an RGB-D camera.
+
+EXTERNPROTO "https://githubusercontent.com"
+
+PROTO Rosbot [
+  field SFVec3f    translation     0 0 0.043
+  field SFRotation rotation        0 0 1 0
+  field SFString   name            "Rosbot"
+  field SFString   controller      "rosbot"
+  field SFString   controllerArgs  []
+  field SFString   customData      ""
+  field SFBool     supervisor      FALSE
+  field SFBool     synchronization TRUE
+  field MFNode     cameraSlot      []
+  field MFNode     lidarSlot       []
+]
+{
+  RosbotChassis {
+    translation IS translation
+    rotation IS rotation
+    name IS name
+    controller IS controller
+    controllerArgs IS controllerArgs
+    customData IS customData
+    supervisor IS supervisor
+    synchronization IS synchronization
+    cameraSlot IS cameraSlot
+    lidarSlot IS lidarSlot
+  }
+}
